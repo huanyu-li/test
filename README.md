@@ -13,6 +13,13 @@ LogMap is a state-of-the-art ontology matching system that combines lexical and 
   $ java -version
   ```
 
+## Clone this projet
+
+```bash
+$ git@github.com:huanyu-li/test.git
+cd test
+```
+
 ## Clone the LogMap repository or download a release
 ```bash
 $ git clone https://github.com/ernestojimenezruiz/logmap-matcher.git
