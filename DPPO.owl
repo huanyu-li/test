@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/dppo/ontology/dpp-core/"
+     xml:base="http://w3id.org/dppo/ontology/dpp-core/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://w3id.org/dppo/ontology/dpp-full/">
+        <owl:versionIRI rdf:resource="http://w3id.org/dppo/ontology/dpp-full/0.1/"/>
+        <dcterms:contributor>Eva Blomqvist</dcterms:contributor>
+        <dcterms:contributor>Huanyu Li</dcterms:contributor>
+        <dcterms:contributor>Robin Keskisärkkä</dcterms:contributor>
+        <dcterms:created>2023-10-30</dcterms:created>
+        <dcterms:created>2023-11-27</dcterms:created>
+        <dcterms:creator>Maike Jansen</dcterms:creator>
+        <dcterms:description>Provenance information for DPP information.</dcterms:description>
+        <dcterms:description>This is a minimal core Ontology Design Pattern defining what a DPP is, i.e. information about a product.</dcterms:description>
+        <dcterms:description>This is a minimal core ontology for DPPs, specialising the DPP ODP.</dcterms:description>
+        <dcterms:license>https://github.com/LiUSemWeb/DPP/blob/master/LICENSE</dcterms:license>
+        <dcterms:title>Core Digital Product Passport Ontology</dcterms:title>
+        <dcterms:title>Digital Product Passport Information Provenance</dcterms:title>
+        <dcterms:title>Digital Product Passport Ontology Design Pattern</dcterms:title>
+        <vann:preferredNamespacePrefix>dpp-core</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>dpp-odp</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>dpp-prov</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://w3id.org/dppo/ontology/dpp-core/</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>http://w3id.org/dppo/ontology/dpp-odp/</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri>http://w3id.org/dppo/ontology/dpp-prov/</vann:preferredNamespaceUri>
+        <rdfs:seeAlso rdf:resource="https://github.com/LiUSemWeb/DPPO"/>
+        <owl:versionInfo>0.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-odp/describes -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/dppo/ontology/dpp-odp/describes">
+        <rdfs:domain rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+        <rdfs:range rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/Product"/>
+        <rdfs:comment xml:lang="en">The relation between a DPP and the product it describes.</rdfs:comment>
+        <rdfs:label xml:lang="en">describes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-odp/hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/dppo/ontology/dpp-odp/hasPart">
+        <rdfs:label xml:lang="en">A relation between a whole and its parts.</rdfs:label>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/actor -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/dppo/ontology/dpp-prov/actor">
+        <rdfs:range rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/Actor"/>
+        <rdfs:comment xml:lang="en">Relation to the actor responsible for a DPP or a piece of information inside it.</rdfs:comment>
+        <rdfs:label xml:lang="en">actor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/dppOwner -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/dppo/ontology/dpp-prov/dppOwner">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/actor"/>
+        <rdfs:domain rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+        <rdfs:comment xml:lang="en">A relation relating the DPP with the actor owning, i.e. responsible for issuing, the DPP.</rdfs:comment>
+        <rdfs:label xml:lang="en">DPP owner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/responsibleActor -->
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/dppo/ontology/dpp-prov/responsibleActor">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/actor"/>
+        <rdfs:domain rdf:resource="http://w3id.org/dppo/ontology/dpp-info/DPPInformation"/>
+        <rdfs:comment xml:lang="en">A relation the indicates the actor responsible for stating a piece of information.</rdfs:comment>
+        <rdfs:label xml:lang="en">responsible actor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/creationTimeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/dppo/ontology/dpp-prov/creationTimeStamp">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/timeStamp"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-info/DPPInformation"/>
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment xml:lang="en">A time stamp indicating when a piece of information, or a DPP, was created (or added), i.e. when it started to be valid.</rdfs:comment>
+        <rdfs:label xml:lang="en">creation time stamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/invalidAtTimeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/dppo/ontology/dpp-prov/invalidAtTimeStamp">
+        <rdfs:subPropertyOf rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/timeStamp"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-info/DPPInformation"/>
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment xml:lang="en">A time stamp indicating the time when a DPP or a piece of information ceased to be valid, i.e. what deprecated or replaced by another piece of information.</rdfs:comment>
+        <rdfs:label xml:lang="en">invalid at time stamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/timeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/dppo/ontology/dpp-prov/timeStamp">
+        <rdfs:comment xml:lang="en">A timstamp of some information, i.e. a DPP or a piece of information.</rdfs:comment>
+        <rdfs:label xml:lang="en">time stamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/Component -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/Component">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/Product"/>
+        <rdfs:comment xml:lang="en">A product that is a component of some other product.</rdfs:comment>
+        <rdfs:label xml:lang="en">Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/ComponentDPP -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/ComponentDPP">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/describes"/>
+                        <owl:someValuesFrom rdf:resource="http://w3id.org/dppo/ontology/dpp-full/Component"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+        <rdfs:comment xml:lang="en">A DPP that describes a component.</rdfs:comment>
+        <rdfs:label xml:lang="en">Component DPP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/ConsumerProduct -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/ConsumerProduct">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/Product"/>
+        <rdfs:comment xml:lang="en">A consumer product, i.e. a product that is sold directly to end users (consumers).</rdfs:comment>
+        <rdfs:label xml:lang="en">Consumer product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/ConsumerProductDPP -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/ConsumerProductDPP">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/describes"/>
+                        <owl:someValuesFrom rdf:resource="http://w3id.org/dppo/ontology/dpp-full/ConsumerProduct"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+        <rdfs:comment xml:lang="en">A DPP describing a consumer product.</rdfs:comment>
+        <rdfs:label xml:lang="en">Comsumer Product DPP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/Material -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/Material">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/Product"/>
+        <rdfs:comment xml:lang="en">A material, that is sold as a product by the producer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Material</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/MaterialDPP -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/MaterialDPP">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/describes"/>
+                        <owl:someValuesFrom rdf:resource="http://w3id.org/dppo/ontology/dpp-full/Material"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+        <rdfs:comment xml:lang="en">A DPP describing a material.</rdfs:comment>
+        <rdfs:label xml:lang="en">Material DPP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/Substance -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/Substance">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/Product"/>
+        <rdfs:comment xml:lang="en">A substance, that is sold as a product by the producer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Substance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-full/SubstanceDPP -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-full/SubstanceDPP">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/describes"/>
+                        <owl:someValuesFrom rdf:resource="http://w3id.org/dppo/ontology/dpp-full/Substance"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+        <rdfs:comment xml:lang="en">A DPP  describing a substance.</rdfs:comment>
+        <rdfs:label xml:lang="en">Substance DPP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-info/DPPInformation -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-info/DPPInformation"/>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-odp/DPP -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-odp/DPP">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/DPP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A Digital Product Passport, containing information about a product, and which main contain sub-DPPs as its parts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Digital Product Passport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-odp/Product -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-odp/Product">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/hasPart"/>
+                <owl:allValuesFrom rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A product, in a broad sense, defined as anything that is sold by a value chain actor, and which can have other products as parts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/Actor -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-prov/Actor">
+        <rdfs:comment xml:lang="en">Actor</rdfs:comment>
+        <rdfs:comment xml:lang="en">An actor responsible for some information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/Authority -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-prov/Authority">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/Actor"/>
+        <rdfs:comment xml:lang="en">An actor that is an authority.</rdfs:comment>
+        <rdfs:label xml:lang="en">Authority</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/Consumer -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-prov/Consumer">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/Actor"/>
+        <rdfs:comment xml:lang="en">An actor that is an end-user of a product, a consumer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Consumer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/dppo/ontology/dpp-prov/ValueChainActor -->
+
+    <owl:Class rdf:about="http://w3id.org/dppo/ontology/dpp-prov/ValueChainActor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/dppo/ontology/dpp-prov/Actor"/>
+        <rdfs:comment xml:lang="en">An actor that is an active participant of the value chain of a product, e.g. a manufacturer, recycler or other actor.</rdfs:comment>
+        <rdfs:label xml:lang="en">Value chain actor</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
