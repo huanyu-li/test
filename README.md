@@ -7,10 +7,11 @@ LogMap is a state-of-the-art ontology matching system that combines lexical and 
 
 ## Prerequisites
 
-- **Java 11+** (required to run LogMap)  
+**Java 11+** (required to run LogMap)  
   Verify with:
   ```bash
   java -version
+  ```
 
 ## Clone the LogMap repository or download a release
 `git clone https://github.com/ernestojimenezruiz/logmap-matcher.git`
@@ -31,6 +32,7 @@ java -jar logmap-matcher-<version>.jar MATCHER \
   ontologyA.owl \
   ontologyB.owl \
   ./output/
+```
 
 - MATCHER tells LogMap to perform ontology matching.
 - ontologyA.owl and ontologyB.owl are the input ontologies.
