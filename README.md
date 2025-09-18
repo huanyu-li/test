@@ -14,9 +14,11 @@ LogMap is a state-of-the-art ontology matching system that combines lexical and 
   ```
 
 ## Clone the LogMap repository or download a release
-`git clone https://github.com/ernestojimenezruiz/logmap-matcher.git`
+```bash
+git clone https://github.com/ernestojimenezruiz/logmap-matcher.git
+cd logmap-matcher
+```
 
-`cd logmap-matcher`
 
 ## compile using maven:
 `mvn clean package`
@@ -49,3 +51,9 @@ A typical mapping in RDF format looks like:
 :CEON_Product owl:equivalentClass :DPPO_Product .
 
 ## Optional: Converting to SSSOM
+
+For richer metadata, you can convert RDF mappings into the SSSOM tabular format (CSV).
+We provide a small converter script in this project:
+```bash
+python rdf2sssom.py ./output/logmap_mappings.rdf ./output/logmap_mappings.csv
+```
