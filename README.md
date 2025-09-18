@@ -10,7 +10,7 @@ LogMap is a state-of-the-art ontology matching system that combines lexical and 
 **Java 11+** (required to run LogMap)  
   Verify with:
   ```bash
-  java -version
+  $ java -version
   ```
 
 ## Clone the LogMap repository or download a release
@@ -21,7 +21,7 @@ cd logmap-matcher
 
 
 ## compile using maven:
-`mvn clean package`
+`$ mvn clean package`
 
 This creates an executable JAR in the `target` directory
 
@@ -30,9 +30,9 @@ Alternatively, download a precompiled distribution from the [relase page](https:
 ## Running LogMap
 
 ```bash
-java -jar logmap-matcher-<version>.jar MATCHER \
-  ontologyA.owl \
-  ontologyB.owl \
+$ java -jar logmap-matcher-<version>.jar MATCHER \
+  CEON-full.owl \
+  DPPO.owl \
   ./output/
 ```
 
@@ -52,9 +52,12 @@ A typical mapping in RDF format looks like:
 
 ## Optional: Converting to SSSOM
 
-For richer metadata, you can convert RDF mappings into the SSSOM tabular format (CSV).
+For richer metadata, you can convert RDF mappings into the SSSOM tabular format (tSV).
 We provide a small converter script in this project:
 ```bash
-$ python rdf2sssom.py ./output/logmap_mappings.rdf ./output/logmap_mappings.csv
+$ python3 -m venv matching-venv
+$ source matching-venv/bin/activate
+$ pip3 install -r requirements.txt
+$ python rdf2sssom.py ./output/logmap_mappings.rdf ./output/logmap_mappings.tsv
 ```
 
