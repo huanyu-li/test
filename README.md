@@ -5,13 +5,8 @@ LogMap is a state-of-the-art ontology matching system that combines lexical and 
 
 ---
 
-## Prerequisites
 
-**Java 11+** (required to run LogMap)  
-  Verify with:
-  ```bash
-  $ java -version
-  ```
+
 
 ## Clone this projet
 
@@ -37,6 +32,12 @@ This creates an executable JAR in the `target` directory
 Alternatively, download a precompiled distribution from the [relase page](https://github.com/ernestojimenezruiz/logmap-matcher/releases).
 
 ## Running LogMap
+
+**Java 11+** (required to run LogMap)  
+  Verify with:
+  ```bash
+  $ java -version
+  ```
 
 ```bash
 $ java -jar logmap-matcher-<version>.jar MATCHER \
