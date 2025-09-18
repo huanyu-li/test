@@ -20,8 +20,10 @@ $ cd logmap-matcher
 ```
 
 
-## compile using maven:
-`$ mvn clean package`
+## Compile using maven:
+```bash
+$ mvn clean package
+```
 
 This creates an executable JAR in the `target` directory
 
