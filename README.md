@@ -15,8 +15,8 @@ LogMap is a state-of-the-art ontology matching system that combines lexical and 
 
 ## Clone the LogMap repository or download a release
 ```bash
-git clone https://github.com/ernestojimenezruiz/logmap-matcher.git
-cd logmap-matcher
+$ git clone https://github.com/ernestojimenezruiz/logmap-matcher.git
+$ cd logmap-matcher
 ```
 
 
