@@ -55,5 +55,6 @@ A typical mapping in RDF format looks like:
 For richer metadata, you can convert RDF mappings into the SSSOM tabular format (CSV).
 We provide a small converter script in this project:
 ```bash
-python rdf2sssom.py ./output/logmap_mappings.rdf ./output/logmap_mappings.csv
+$ python rdf2sssom.py ./output/logmap_mappings.rdf ./output/logmap_mappings.csv
 ```
+
