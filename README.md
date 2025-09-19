@@ -52,13 +52,21 @@ $ java -jar logmap-matcher-<version>.jar MATCHER \
 
 ## Understanding the Output
 
-After running LogMap, the output/ folder will contain:
-logmap_mappings.rdf – The alignment in RDF format (recommended for interoperability).
-logmap_mappings.txt – The alignment in a simple tabular text format.
-logmap_debug.log – Detailed log of the matching process.
+After running LogMap, the absolute_path_of_output/ folder will contain:
+logmap2_mappings.rdf – The alignment in RDF format (recommended for interoperability).
+logmap2_mappings.txt – The alignment in a simple tabular text format.
 A typical mapping in RDF format looks like:
 
-:CEON_Product owl:equivalentClass :DPPO_Product .
+```
+<map>
+	<Cell>
+		<entity1 rdf:resource="http://w3id.org/CEON/ontology/product/Product"/>
+		<entity2 rdf:resource="http://w3id.org/dppo/ontology/dpp-odp/Product"/>
+		<measure rdf:datatype="xsd:float">0.5</measure>
+		<relation>=</relation>
+	</Cell>
+</map>
+```
 
 ## Optional: Converting to SSSOM
 
@@ -68,6 +76,17 @@ We provide a small converter script in this project:
 $ python3 -m venv matching-venv
 $ source matching-venv/bin/activate
 $ pip3 install -r requirements.txt
-$ python rdf2sssom.py /absolute_path_of_output/logmap2_mappings.rdf ./alignment.tsv LogMap
+$ python rdf2sssom.py --config config.yaml
 ```
+
+The config.yaml looks like this:
+```
+input_file: ./output/logmap2_mappings.rdf
+output_file: ./aligments.tsv
+tool: LogMap 
+
+# optional
+verbose: true
+```
+
 
