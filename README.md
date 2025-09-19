@@ -81,7 +81,7 @@ $ python rdf2sssom.py --config config.yaml
 
 The config.yaml looks like this:
 ```
-input_file: ./output/logmap2_mappings.rdf
+input_file: /absolute_path_of_output/logmap2_mappings.rdf
 output_file: ./aligments.tsv
 tool: LogMap 
 
