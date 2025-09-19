@@ -1,0 +1,6 @@
+input_file: ./output/logmap2_mappings.rdf
+output_file: ./aligments.tsv
+tool: LogMap 
+
+# optional
+verbose: true
