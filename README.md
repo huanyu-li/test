@@ -68,6 +68,6 @@ We provide a small converter script in this project:
 $ python3 -m venv matching-venv
 $ source matching-venv/bin/activate
 $ pip3 install -r requirements.txt
-$ python rdf2sssom.py /absolute_path_of_output/logmap2_mappings.rdf ./alignment.tsv
+$ python rdf2sssom.py /absolute_path_of_output/logmap2_mappings.rdf ./alignment.tsv LogMap
 ```
 
