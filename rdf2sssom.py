@@ -74,8 +74,7 @@ def analyze_alignment_in_rdf(alignment_rdf_file, tool):
     return mapping_lst 
 
 def main(argv):
-    print(len(argv))
-    if len(argv) < 3:
+    if len(argv) < 4:
         return
     rdf2sssom(argv[1], argv[2], argv[3])
 
