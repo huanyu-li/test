@@ -11,8 +11,8 @@ LogMap is a state-of-the-art ontology matching system that combines lexical and 
 ## Clone this projet
 
 ```bash
-$ git clone git@github.com:huanyu-li/test.git
-$ cd test
+$ git clone git@github.com:LiUSemWeb/Onto-DESIDE-AlignmentTutorial.git
+$ cd Onto-DESIDE-AlignmentTutorial
 ```
 
 ## Clone the LogMap repository or download a release
