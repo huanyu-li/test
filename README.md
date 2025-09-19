@@ -41,14 +41,14 @@ Alternatively, download a precompiled distribution from the [relase page](https:
 
 ```bash
 $ java -jar logmap-matcher-<version>.jar MATCHER \
-  CEON-full.owl \
-  DPPO.owl \
-  ./output/
+  http://w3id.org/CEON/ontology/product/ \
+  http://w3id.org/dppo/ontology/dpp-core/ \
+  /absolute_path_of_output/
 ```
 
 - MATCHER tells LogMap to perform ontology matching.
 - ontologyA.owl and ontologyB.owl are the input ontologies.
-- ./output/ is the folder where results will be stored.
+- /absolute_path_of_output/ is the absolute path of the location where you want to save the output alignments.
 
 ## Understanding the Output
 
