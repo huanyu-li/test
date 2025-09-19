@@ -9,6 +9,9 @@ from collections import defaultdict
 from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, XSD
 import csv
+import argparse
+from pathlib import Path
+import yaml  # pip install pyyaml
 
 namespaces = {'xmlns': 'http://example.org/alignment',
               'xmlns:rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
@@ -53,9 +56,12 @@ def construct_alignment_output(o1, o2, e1, e2, relation, confidence, tool):
     mapping['mapping_justification'] = ''
     return mapping
 
-def rdf2sssom(input_file, output_file, tool):
+def rdf2sssom(input_file, output_file, tool, verbose=False):
+    if verbose:
+        print(f"[INFO] Input RDF: {input_file}")
+        print(f"[INFO] Output TSV: {output_file}")
+        print(f"[INFO] Tool: {tool}")
     mapping_lst = analyze_alignment_in_rdf(input_file, tool)
-    print(mapping_lst)
     if len(mapping_lst) > 0:
         generate_sssom_tsv_file(mapping_lst, output_file)
 
@@ -74,12 +80,39 @@ def analyze_alignment_in_rdf(alignment_rdf_file, tool):
     return mapping_lst 
 
 def main(argv):
-    if len(argv) < 4:
-        return
-    rdf2sssom(argv[1], argv[2], argv[3])
+    parser = argparse.ArgumentParser(description="Convert RDF to SSSOM format using a config file.")
+    parser.add_argument(
+        "--config",
+        required=True,
+        help="Path to YAML configuration file"
+    )
+    args = parser.parse_args(argv)
+
+    # Load YAML config
+    cfg_path = Path(args.config)
+    if not cfg_path.exists():
+        sys.exit(f"Config file not found: {cfg_path}")
+
+    with cfg_path.open("r", encoding="utf-8") as f:
+        cfg = yaml.safe_load(f) or {}
+
+    # Validate required keys
+    required_keys = ["input_file", "output_file", "tool"]
+    missing = [k for k in required_keys if k not in cfg or not cfg[k]]
+    if missing:
+        sys.exit(f"Missing required config keys: {', '.join(missing)}")
+
+    #rdf2sssom(argv[1], argv[2], argv[3])
+    verbose = bool(cfg.get("verbose", False))
+    rdf2sssom(
+        cfg["input_file"],
+        cfg["output_file"],
+        cfg["tool"],
+        verbose=verbose,
+    )
 
 if __name__ == "__main__":
-    main(sys.argv)
+    main(sys.argv[1:])
 
 
 # python rdf2sssom.py /path/logmap_mappings.rdf ./algnments.tsv LogMap
